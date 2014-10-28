@@ -11,25 +11,22 @@ import time
 # bmp = Arm(debug=False)
 Arm = Arm()
 
-SERVO_MIN = 150  # Min pulse length out of 4096
-SERVO_MAX = 600  # Max pulse length out of 4096
-SERVO_CENTER		= 400		# Center value for the servo, should be 0 degrees of rotation.
+SERVO_MIN 		= 150  # Min pulse length out of 4096
+SERVO_MAX 		= 650  # Max pulse length out of 4096
+SERVO_CENTER	= 375  # Center value for the servo, should be 0 degrees of rotation.
 
 
 while (True):
-  # Change speed of continuous servo on channel O
 
-  Arm.setBase(SERVO_CENTER)
-  Arm.setShoulder(SERVO_MIN)
-  Arm.setElbow(SERVO_MIN)
+	Arm.setBase(0)
+	time.sleep(1)
 
-  time.sleep(1)
 
-  Arm.setBase(SERVO_MAX)
-  Arm.setShoulder(SERVO_MAX)
-  Arm.setElbow(SERVO_MAX)
+	Arm.setBase(90)
+	time.sleep(1)
 
-  time.sleep(1)
+	Arm.setBase(180)
+	time.sleep(1)
 
 
 
